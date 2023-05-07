@@ -1,22 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
-
+//global styles
 html,
 body {
   height: 100%;
 }
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
 
 h1,
 h3,
-h4 {
-  font-family: "Quicksand", sans-serif;
+h4,
+.mat-typography {
+  font-family: "Castoro Titling", cursive;
 }
 
 h2 {
-  font-family: "Instrument Serif", serif;
+  font-family: "Inconsolata", monospace;
 }
 
 .flex-container {
