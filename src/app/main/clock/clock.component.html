@@ -1,8 +1,22 @@
-<h1>We zijn er hoor jongens lekker lekker</h1>
-
-<!-- <mat-chip-listbox aria-label="Fish selection">
-  <mat-chip-option>One fish</mat-chip-option>
-  <mat-chip-option>Two fish</mat-chip-option>
-  <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
-  <mat-chip-option color="warn">Warn fish</mat-chip-option>
-</mat-chip-listbox> -->
+<div class="flex-container">
+  <h2>{{ time }}</h2>
+  <div id="pause-play-container">
+    <button (click)="play()" color="primary" mat-fab>
+      <mat-icon aria-hidden="false" aria-label="clock play">
+        <span class="material-symbols-outlined"> play_arrow </span>
+      </mat-icon>
+    </button>
+    <button (click)="pause()" color="primary" mat-fab>
+      <mat-icon aria-hidden="false" aria-label="clock pause">
+        <span class="material-symbols-outlined"> pause </span>
+      </mat-icon>
+    </button>
+  </div>
+  <div class="flex-container">
+    <button (click)="reset()" color="accent" mat-fab>
+      <mat-icon aria-hidden="false" aria-label="clock reset">
+        <span class="material-symbols-outlined"> replay </span>
+      </mat-icon>
+    </button>
+  </div>
+</div>

@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 //materials
 import { MatChipsModule } from '@angular/material/chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainModule } from './main/main.module';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -24,7 +23,6 @@ const routes: Routes = [
     AppRoutingModule,
     MatChipsModule,
     BrowserAnimationsModule,
-    MainModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],
