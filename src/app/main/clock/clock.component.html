@@ -1,22 +1,29 @@
-<div class="flex-container mat-typography">
-  <h2>{{ time }}</h2>
-  <div id="pause-play-container">
-    <button (click)="play()" color="primary" mat-fab>
-      <mat-icon aria-hidden="false" aria-label="clock play">
-        <span class="material-symbols-outlined"> play_arrow </span>
-      </mat-icon>
-    </button>
-    <button (click)="pause()" color="primary" mat-fab>
-      <mat-icon aria-hidden="false" aria-label="clock pause">
-        <span class="material-symbols-outlined"> pause </span>
-      </mat-icon>
-    </button>
-  </div>
-  <div class="flex-container">
-    <button (click)="reset()" color="accent" mat-fab>
-      <mat-icon aria-hidden="false" aria-label="clock reset">
-        <span class="material-symbols-outlined"> replay </span>
-      </mat-icon>
-    </button>
-  </div>
-</div>
+<mat-card>
+  <mat-card-content>
+    <div id="clock" class="flex-container mat-typography">
+      <h2>{{ currenTime }}</h2>
+      <h2>€: {{ money.toFixed(2) }}</h2>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <div id="pause-play-container">
+      <button (click)="play()" color="primary" mat-fab>
+        <mat-icon aria-hidden="false" aria-label="clock play">
+          <span class="material-symbols-outlined"> play_arrow </span>
+        </mat-icon>
+      </button>
+      <button (click)="pause()" color="primary" mat-fab>
+        <mat-icon aria-hidden="false" aria-label="clock pause">
+          <span class="material-symbols-outlined"> pause </span>
+        </mat-icon>
+      </button>
+    </div>
+    <div class="flex-container">
+      <button (click)="reset()" color="accent" mat-fab>
+        <mat-icon aria-hidden="false" aria-label="clock reset">
+          <span class="material-symbols-outlined"> replay </span>
+        </mat-icon>
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

@@ -4,8 +4,7 @@
 
 $my-typography: mat.define-typography-config(
   $font-family: '"Castoro Titling", cursive',
-  $headline-1:
-    mat.define-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
+  $headline-1: mat.define-typography-level(112px, 112px, 300),
   $headline-2:
     mat.define-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
   $headline-3:

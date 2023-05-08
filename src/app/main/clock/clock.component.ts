@@ -6,25 +6,37 @@ import { Component } from '@angular/core';
   styleUrls: ['./clock.component.css'],
 })
 export class ClockComponent {
-  time: number = 0;
+  currenTime: number = 0;
+  money: number = 0;
   interval: number = 0;
+  temporaryWageArray: number[] = [12.5, 13.5];
 
+  //clock functions
   pause = () => {
     window.clearInterval(this.interval);
   };
   play = () => {
     const id = this.timer();
     this.interval = id;
-    console.log(id);
-    console.log(this.interval);
   };
   reset = () => {
-    this.time = 0;
+    this.currenTime = 0;
+    this.money = 0;
   };
   timer = () => {
     return window.setInterval(() => {
-      this.time++;
-      console.log(this.time);
+      this.currenTime++;
+      this.money = this.moneyTimeMultiplier(this.temporaryWageArray);
     }, 1000);
+  };
+
+  //money functions
+  moneyTimeMultiplier = (wageArray: number[]): number => {
+    var subtotal: number = 0;
+    wageArray.forEach((number) => {
+      subtotal += number;
+    });
+    const total = (subtotal / 60 ** 2) * this.currenTime;
+    return total;
   };
 }

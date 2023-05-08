@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 const routes: Routes = [{ path: '', component: MainComponent }];
 
@@ -17,6 +18,7 @@ const routes: Routes = [{ path: '', component: MainComponent }];
     MatChipsModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
     RouterModule.forChild(routes),
   ],
 })
