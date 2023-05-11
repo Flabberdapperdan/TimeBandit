@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./clock.component.css'],
 })
 export class ClockComponent {
-  currenTime: number = 0;
+  rawTime: number = 0;
+  milliseconds: string = '00';
+  seconds: string = '00';
+  minutes: string = '00';
   money: number = 0;
   interval: number = 0;
   temporaryWageArray: number[] = [12.5, 13.5];
@@ -20,14 +23,30 @@ export class ClockComponent {
     this.interval = id;
   };
   reset = () => {
-    this.currenTime = 0;
+    this.rawTime = 0;
+    this.seconds = '00';
+    this.milliseconds = '00';
     this.money = 0;
   };
+  // this counts too fast??!?!
+  // now its good but double the check the math on the minutes, that's fucky
   timer = () => {
     return window.setInterval(() => {
-      this.currenTime++;
+      this.rawTime++;
       this.money = this.moneyTimeMultiplier(this.temporaryWageArray);
-    }, 1000);
+      this.milliseconds = (this.rawTime % 100)
+        .toFixed(0)
+        .toString()
+        .padStart(2, '0');
+      this.seconds = Math.floor(this.rawTime / 100)
+        .toFixed(0)
+        .toString()
+        .padStart(2, '0');
+      this.minutes = (this.rawTime / 60 ** 60)
+        .toFixed(0)
+        .toString()
+        .padStart(2, '0');
+    }, 10);
   };
 
   //money functions
@@ -36,7 +55,7 @@ export class ClockComponent {
     wageArray.forEach((number) => {
       subtotal += number;
     });
-    const total = (subtotal / 60 ** 2) * this.currenTime;
+    const total = ((subtotal / 60 ** 2) * this.rawTime) / 100;
     return total;
   };
 }
