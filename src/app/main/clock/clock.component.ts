@@ -11,16 +11,16 @@ export class ClockComponent {
   seconds: string = '00';
   minutes: string = '00';
   money: number = 0;
-  interval: number = 0;
-  temporaryWageArray: number[] = [12.5, 13.5];
+  intervalId: number = 0;
+  wageArray: number[] = [];
 
   //clock functions
   pause = () => {
-    window.clearInterval(this.interval);
+    window.clearInterval(this.intervalId);
   };
   play = () => {
     const id = this.timer();
-    this.interval = id;
+    this.intervalId = id;
   };
   reset = () => {
     this.rawTime = 0;
@@ -33,7 +33,7 @@ export class ClockComponent {
   timer = () => {
     return window.setInterval(() => {
       this.rawTime++;
-      this.money = this.moneyTimeMultiplier(this.temporaryWageArray);
+      this.money = this.moneyTimeMultiplier(this.wageArray);
       this.milliseconds = (this.rawTime % 100)
         .toFixed(0)
         .toString()
