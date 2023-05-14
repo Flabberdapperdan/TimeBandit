@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Member } from '../Models/Member';
 
 @Component({
   selector: 'app-main',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent {
-  temporaryWageArray: number[] = [12.5, 13.5];
+  memberArray: Member[] = [];
+
+  addMember = (newMember: Event) => {
+    console.log(newMember);
+
+    //this.memberArray.push(newMember);
+  };
 }

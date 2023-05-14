@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Member } from 'src/app/Models/Member';
 
 @Component({
   selector: 'app-clock',
@@ -12,7 +13,8 @@ export class ClockComponent {
   minutes: string = '00';
   money: number = 0;
   intervalId: number = 0;
-  @Input() wageArray: number[] = [];
+  @Input() memberArray: Member[] = [];
+  wageArray: number[] = [];
 
   //clock functions
   pause = () => {

@@ -1,5 +1,5 @@
 <div class="flex-container">
   <h1>Time Bandit</h1>
-  <app-clock [wageArray]="temporaryWageArray"></app-clock>
-  <app-members></app-members>
+  <app-clock [memberArray]="memberArray"></app-clock>
+  <app-members (submitMemberEvent)="addMember($event)"></app-members>
 </div>
