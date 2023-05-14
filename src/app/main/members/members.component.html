@@ -1,2 +1,16 @@
-<p>members works!</p>
-<p>{{ wageArray }}</p>
+<form class="form flex-container">
+  <mat-form-field class="example-full-width">
+    <mat-label>Naam</mat-label>
+    <input [(ngModel)]="naam" matInput placeholder="Naam" value="" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Uurloon</mat-label>
+    <input [(ngModel)]="uurloon" matInput type="number" placeholder= />
+  </mat-form-field>
+  <button color="primary" mat-fab>
+    <mat-icon aria-hidden="false" aria-label="add member">
+      <span class="material-symbols-outlined"> plus </span>
+    </mat-icon>
+  </button>
+</form>
