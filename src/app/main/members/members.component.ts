@@ -9,11 +9,17 @@ import { Member } from '../../Models/Member';
 export class MembersComponent {
   //@Input() wageArray: number[] = [];
   naam: string = '';
-  uurloon: number = 0;
+  wage: number = 0;
 
   newMemberName: string = '';
   newMemberWage: number = 0;
-  memberArray: Member[] = [];
+  memberArray: Member[] = [
+    { id: 1, name: 'Matthijs', wage: 11 },
+    { id: 2, name: 'Renee', wage: 12 },
+    { id: 3, name: 'Tjesse', wage: 14 },
+  ];
+
+  displayedColumns = ['name', 'wage'];
 
   submitMember = () => {};
 }
