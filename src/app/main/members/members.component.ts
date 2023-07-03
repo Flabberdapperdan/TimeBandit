@@ -18,7 +18,7 @@ export class MembersComponent implements OnInit {
     { id: 2, name: 'Renee', wage: 12 },
     { id: 3, name: 'Tjesse', wage: 14 },
   ];
-  displayedColumns = ['name', 'wage'];
+  displayedColumns = ['name', 'wage', 'delete'];
 
   ngOnInit(): void {
     this.memberArray.forEach((member: Member) => {
@@ -27,5 +27,18 @@ export class MembersComponent implements OnInit {
   }
   submitMemberEvent = (newMember: Member) => {
     this.memberArrayEvent.emit(newMember);
+  };
+  deleteRow = (id: number) => {
+    var newArray: Member[] = [];
+    this.memberArray.map((member) => {
+      if (member.id == id) {
+        return;
+      } else {
+        newArray.push(member);
+      }
+    });
+    this.memberArray = newArray;
+    console.log(newArray);
+    console.log(this.memberArray);
   };
 }
